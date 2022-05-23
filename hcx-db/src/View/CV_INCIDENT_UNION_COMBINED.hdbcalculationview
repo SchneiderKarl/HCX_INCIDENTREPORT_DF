@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_INCIDENT_UNION_COMBINED" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="CV_INCIDENT_UNION_COMBINED.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="INCIDENT_2021_SYN">
+    <resourceUri>INCIDENT_2021_SYN</resourceUri>
+  </DataSource>
+  <DataSource id="INCIDENT_ARCHIVE_VT_SYN">
+    <resourceUri>INCIDENT_ARCHIVE_VT_SYN</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_1">
+    <viewAttributes>
+      <viewAttribute id="INCIDENT_ID"/>
+      <viewAttribute id="TIMESTAMP"/>
+      <viewAttribute id="EMPLOYEE_ID"/>
+      <viewAttribute id="CATEGORY"/>
+      <viewAttribute id="STATUS"/>
+      <viewAttribute id="DETAILS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCIDENT_ID" source="INCIDENT_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIMESTAMP" source="TIMESTAMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPLOYEE_ID" source="EMPLOYEE_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CATEGORY" source="CATEGORY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STATUS" source="STATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DETAILS" source="DETAILS"/>
+    </input>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCIDENT_ID" source="INCIDENT_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIMESTAMP" source="TIMESTAMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPLOYEE_ID" source="EMPLOYEE_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CATEGORY" source="CATEGORY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STATUS" source="STATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DETAILS" source="DETAILS"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="INCIDENT_ID"/>
+      <viewAttribute id="TIMESTAMP"/>
+      <viewAttribute id="EMPLOYEE_ID"/>
+      <viewAttribute id="CATEGORY"/>
+      <viewAttribute id="STATUS"/>
+      <viewAttribute id="DETAILS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="INCIDENT_2021_SYN"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="INCIDENT_ID"/>
+      <viewAttribute id="TIMESTAMP"/>
+      <viewAttribute id="EMPLOYEE_ID"/>
+      <viewAttribute id="CATEGORY"/>
+      <viewAttribute id="STATUS"/>
+      <viewAttribute id="DETAILS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="INCIDENT_ARCHIVE_VT_SYN"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Union_1">
+  <attributes>
+    <attribute id="INCIDENT_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INCIDENT_ID"/>
+      <keyMapping columnObjectName="Union_1" columnName="INCIDENT_ID"/>
+    </attribute>
+    <attribute id="TIMESTAMP" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TIMESTAMP"/>
+      <keyMapping columnObjectName="Union_1" columnName="TIMESTAMP"/>
+    </attribute>
+    <attribute id="EMPLOYEE_ID" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EMPLOYEE_ID"/>
+      <keyMapping columnObjectName="Union_1" columnName="EMPLOYEE_ID"/>
+    </attribute>
+    <attribute id="CATEGORY" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CATEGORY"/>
+      <keyMapping columnObjectName="Union_1" columnName="CATEGORY"/>
+    </attribute>
+    <attribute id="STATUS" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STATUS"/>
+      <keyMapping columnObjectName="Union_1" columnName="STATUS"/>
+    </attribute>
+    <attribute id="DETAILS" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DETAILS"/>
+      <keyMapping columnObjectName="Union_1" columnName="DETAILS"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="221.11302679000914" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Union_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="221.11302679000914" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="356.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302.00000000000006" y="356.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

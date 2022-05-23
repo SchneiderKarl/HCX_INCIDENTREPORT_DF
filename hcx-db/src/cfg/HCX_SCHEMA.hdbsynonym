@@ -1,0 +1,20 @@
+{
+  "EMPLOYEE_SYN": {
+    "target": {
+      "object": "EMPLOYEE",
+      "schema": "HCX_SCHEMA"
+    }
+  },
+  "INCIDENT_2021_SYN": {
+    "target": {
+      "object": "INCIDENT_2021",
+      "schema": "HCX_SCHEMA"
+    }
+  },
+  "INCIDENT_ARCHIVE_VT_SYN": {
+    "target": {
+      "object": "INCIDENT_ARCHIVE_VT",
+      "schema": "HCX_SCHEMA"
+    }
+  }
+}

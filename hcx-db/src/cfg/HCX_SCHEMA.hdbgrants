@@ -1,0 +1,14 @@
+{
+    "HCX_SCHEMA_UPS": {
+        "object_owner": {
+            "roles": [
+                "HCX_SCHEMA::external_access_g"
+            ]
+        },
+        "application_user": {
+            "roles": [
+                "HCX_SCHEMA::external_access"
+            ]
+        }
+    }
+}

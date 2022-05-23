@@ -1,0 +1,13 @@
+CHILD,PARENT
+Global,
+Europe,Global
+North America,Global
+Germany,Europe
+USA,North America
+Canada,North America
+Walldorf,Germany
+Berlin,Germany
+San Francisco,USA
+New York City,USA
+Montreal,Canada
+Vancouver,Canada
